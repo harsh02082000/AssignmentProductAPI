@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<ProductEntity.Product>
+@*<div class="container-fluid" style="height:100px;background-color:blueviolet">
+    My Movie list
+</div>*@
+@*<div class="row">
+    <div class="col-md-4" style="height100px;background-color:aquamarine">Movie 1</div>
+    <div class="col-md-4" style="height100px;">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-4" style="height100px;background-color:gray">Movie 3</div>
+</div>*@
+
+<div>
+    <hr />
+    <a asp-controller="Product" asp-action="ProductEntry">Product Entry</a>
+    <hr />
+</div>
+<div class="row">
+    <div class="col-12">
+        <h3>Products</h3>
+        <hr />
+        <table class="table table-light table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>Product Code</th>
+                    <th>Product Year</th>
+                    <th>Channel Id </th>
+                    <th>Created Date</th>
+                    <th>Created By</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                   
+                    <tr>
+                        <td>@product.ProductId</td>
+                        <td>@product.ProductName</td>
+                        <td>@product.ProductCode</td>
+                        <td>@product.ProductYear</td>
+                        <td>@product.ChannelId</td>
+
+                        
+                        <th>@product.CreatedDate</th>
+                        <th>@product.CreatedBy</th>
+                      
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
